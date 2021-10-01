@@ -1,40 +1,42 @@
-# Superhero REST API
+# user REST API
 
-A simple Superhero RESTful API that allows client applications to create, read, edit and delete superheroes
+A simple user RESTful API that allows client applications to create, read, edit and delete users
 
 ## End Points
 
-### GET /heroes
+### GET /users
 
-The above end point returns all superheroes
+The above end point returns all users
 
-### GET /heroes/id
+### GET /users/id
 
-The above end point returns a superhero based on the id provided
+The above end point returns a user based on the id provided
 
-### POST /heroes
+### POST /users
 
-The above end point creates a superhero. You are required to submit the superhero data in the body of the request (as JSON) : The data includes :
+The above end point creates a user. You are required to submit the user data in the body of the request (as JSON) : The data includes :
 
-- name (required)
+- firstName (required)
+- lastName (required)
 - gender (required)
-- powerLevel (required)
-- comicbookType (required),
-- realName (optional)
+- imagePath (required),
+- username (required)
+- password (required)
 
-### PUT /heroes/id
+### PUT /users/id
 
-The above end point updates a superhero based on the id provided. You are required to submit the new superhero data in the body of the request (as JSON) : The data could include any of the following :
+The above end point updates a user based on the id provided. You are required to submit the new user data in the body of the request (as JSON) : The data could include any of the following :
 
-- name
-- gender
-- powerLevel
-- comicbookType
-- realName
+- firstName (required)
+- lastName (required)
+- gender (required)
+- imagePath (required),
+- username (required)
+- password (required)
 
-### DELETE /heroes/id
+### DELETE /users/id
 
-The above end point deletes a superhero based on the id provided
+The above end point deletes a user based on the id provided
 
 ## Rules to Set up application
 
