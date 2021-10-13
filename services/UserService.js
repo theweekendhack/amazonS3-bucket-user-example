@@ -3,7 +3,7 @@ const AWS = require('aws-sdk');
 const { v4: uuidv4 } = require('uuid');
 const  bcrypt = require('bcryptjs');
 const UserModel = require("../models/UserModel.js");
-
+const jwt  = require("jsonwebtoken");
 
 exports.createAUser =(req,res)=>{
 
@@ -241,9 +241,17 @@ exports.authenticateUser =(req,res)=>{
 
                             //IT MEANS YOU HAVE BEEN  AUTHENTICATED
 
+                            const token = jwt.sign({
+                                _id : user._id,
+                                firstName : user.firstName,
+                                lastName  : user.lastName,
+                                email : user.email
+                            }, process.env.JWT_SECRET);
+
                             //GENERATE THE JWT 
-                            res.json({
-                             message : "You have been authenticated!!!!!"   
+                            res.header("x-auth-header",token).json({
+                             message : "You have been authenticated!!!!!",
+                    
                             })
                         }
 
