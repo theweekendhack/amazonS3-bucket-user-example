@@ -6,7 +6,7 @@ const userService = require("../services/UserService.js");
 router.post("/",userService.createAUser)
 
 //Read ALL 
-router.get("/",userService.getUsers)
+router.get("/",userService.getUsers);
 
 
 //READ ONE User
@@ -18,7 +18,10 @@ router.get("/:id",userService.getAUser)
 router.put("/:id",userService.updateAUser)
 
 //DELETE
-router.delete("/:id",userService.deleteAUser)
+router.delete("/:id",userService.deleteAUser);
+
+//POST
+router.post("/auth",userService.authenticateUser);
 
 
 module.exports = router

@@ -3,32 +3,33 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
-const userSchema = new Schema({
+const heroSchema = new Schema({
 
-    firstName : {
+    name : {
         type : String,
         required : true
     },
-    lastName : {
+    gender : {
         type :String,
         required : true
     },
-    gender: {
-        type:String,
-        required : true
-    },
-    email : 
+    powerLevel : 
     {
-        type: String,
+        type: Number,
         required:true
     },
-    password : {
+    comicbookType : {
         type:String,
         required:true
     },
-    imagePath : {
+    realName : 
+    {
+        type: String
+    },
+    imagePath:
+    {
         type:String,
-        default : "default.jpg"
+        default:"default.jpg"
     },
     dateCreated :{
         type : Date,
@@ -37,6 +38,6 @@ const userSchema = new Schema({
 
 });
 
-const UserModel = mongoose.model('User', userSchema);
+const Hero = mongoose.model('Hero', heroSchema);
 
-module.exports = UserModel;
+module.exports = Hero;
